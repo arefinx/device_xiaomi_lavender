@@ -113,18 +113,17 @@ vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 
 # Camera
+persist.camera.HAL3.enabled=1
+persist.camera.perflock.enable=0
+persist.camera.preview.ubwc=0
 persist.vendor.camera.preview.ubwc=0
-persist.vendor.camera.isp.clock.optmz=0
-persist.vendor.camera.isp.turbo=1
-persist.vendor.camera.imglib.usefdlite=1
 persist.vendor.camera.expose.aux=1
-persist.vendor.camera.HAL3.enabled=1
 persist.vendor.camera.manufacturer=Xiaomi
 persist.vendor.camera.model=Redmi Note 7
 persist.vendor.camera.awb.sync=2
 persist.vendor.camera.preview.ubwc=0
 vendor.video.disable.ubwc=1
-vidc.enc.dcvs.extra-buff-count=2
+video.disable.ubwc=1
 
 # Display
 debug.sf.disable_client_composition_cache=1
