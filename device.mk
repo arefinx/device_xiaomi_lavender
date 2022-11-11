@@ -32,7 +32,8 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libsndmonitor \
-    libvolumelistener
+    libvolumelistener \
+    sound_trigger.primary.sdm660
 
 # Audio configs
 PRODUCT_COPY_FILES += \
