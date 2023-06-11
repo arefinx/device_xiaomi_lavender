@@ -146,9 +146,11 @@ PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
 
+ifeq ($(TARGET_SUPPORT_FREEFORM),true)
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
+endif
 
 # GPS / Location
 PRODUCT_PACKAGES += \
