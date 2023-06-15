@@ -368,6 +368,9 @@
         M -80,0 L -80,80 L 80,80 L 80,0 Z
     </string>
 
+    <!-- Auto-brightness sensor type string -->
+    <string name="config_displayLightSensorType">"android.sensor.light"</string>
+
     <!-- Height of the status bar -->
     <dimen name="status_bar_height_portrait">80px</dimen>
     <dimen name="status_bar_height_landscape">24dp</dimen>
