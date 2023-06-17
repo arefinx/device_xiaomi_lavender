@@ -403,4 +403,7 @@
          Setting this to track the default color temperature value (currently 6500K). -->
     <integer name="config_nightDisplayColorTemperatureMax">6500</integer>
 
+    <!-- Whether device supports increased touch sensitvity -->
+    <bool name="config_supportGloveMode">true</bool>
+
 </resources>
