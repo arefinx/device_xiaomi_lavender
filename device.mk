@@ -125,9 +125,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_lavender
 
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
