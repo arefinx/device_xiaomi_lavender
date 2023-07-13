@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "NotchKillerLavender",
+    theme: "NotchKillerLavender",
+    sdk_version: "current",
+    vendor: true,
+}

@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "TelephonyLavender",
+    theme: "TelephonyLavender",
+    sdk_version: "current",
+    vendor: true,
+}

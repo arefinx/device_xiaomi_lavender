@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "MaintainerLavender",
+    theme: "MaintainerLavender",
+    sdk_version: "current",
+    vendor: true,
+}

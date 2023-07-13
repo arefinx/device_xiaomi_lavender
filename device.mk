@@ -263,15 +263,18 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-pe \
-
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay \
-    NotchBarKiller \
-    LavenderWifiOverlay
+# Overlay
+PRODUCT_PACKAGES_PACKAGES += \
+    CarrierConfigLavender \
+    FrameworksLavender \
+    NoCutoutLavender \
+    NotchKillerLavender \
+    MaintainerLavender \
+    SettingsProviderLavender \
+    SettingsLavender \
+    SystemUILavender \
+    TelephonyLavender \
+    WifiLavender
 
 # Perf
 PRODUCT_PACKAGES += \

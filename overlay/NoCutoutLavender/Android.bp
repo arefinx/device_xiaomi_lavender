@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "NoCutoutLavender",
+    theme: "NoCutoutLavender",
+    sdk_version: "current",
+    vendor: true,
+}

@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "FrameworksLavender",
+    theme: "FrameworksLavender",
+    sdk_version: "current",
+    vendor: true,
+}
