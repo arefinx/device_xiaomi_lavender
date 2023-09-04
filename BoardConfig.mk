@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+BOARD_VENDOR := xiaomi
+
 DEVICE_PATH := device/xiaomi/lavender
 
 # ANT+
@@ -35,7 +37,7 @@ TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm660
+TARGET_BOOTLOADER_BOARD_NAME := lavender
 TARGET_NO_BOOTLOADER := true
 
 # Build
@@ -56,15 +58,9 @@ TARGET_USES_ION := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
-
 # FM
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAS_QCA_FM_SOC := cherokee
-
-# Fstab
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
@@ -80,25 +76,24 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lavender
 TARGET_RECOVERY_DEVICE_MODULES := libinit_lavender
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_power_aware=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
-BOARD_KERNEL_CMDLINE += loop.max_part=7
-BOARD_KERNEL_CMDLINE += printk.devkmsg=on
-BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
-BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_LLVM_BINUTILS := false
-TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_LLVM_BINUTILS := false
+
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_power_aware=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 \
+                        loop.max_part=7 \
+                        printk.devkmsg=on \
+                        usbcore.autosuspend=7 \
+                        androidboot.init_fatal_reboot_target=recovery
+
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-TARGET_KERNEL_CONFIG := lavender_defconfig
-BOARD_KERNEL_SEPARATED_DTBO := true
 
-# Platform
-TARGET_BOARD_PLATFORM := sdm660
-BOARD_VENDOR := xiaomi
+TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
+TARGET_KERNEL_CONFIG := lavender_defconfig
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -109,6 +104,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3640619008
 BOARD_VENDORIMAGE_PARTITION_SIZE := 2080305152
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -125,6 +121,13 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Platform
+TARGET_BOARD_PLATFORM := sdm660
+BOARD_USES_QCOM_HARDWARE := true
+
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
@@ -132,8 +135,8 @@ TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
