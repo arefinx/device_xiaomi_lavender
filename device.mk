@@ -68,6 +68,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.sdm660 \
+    libMegviiFacepp-0.5.2 \
     Aperture \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service
