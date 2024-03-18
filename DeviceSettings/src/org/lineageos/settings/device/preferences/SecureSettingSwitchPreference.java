@@ -18,10 +18,10 @@ package org.lineageos.settings.device.preferences;
 
 import android.content.Context;
 import android.provider.Settings;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import android.util.AttributeSet;
 
-public class SecureSettingSwitchPreference extends SwitchPreference {
+public class SecureSettingSwitchPreference extends SwitchPreferenceCompat {
     public SecureSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
