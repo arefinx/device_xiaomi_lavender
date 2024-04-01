@@ -92,7 +92,8 @@
             android:name=".FPSTileService"
             android:icon="@drawable/ic_fps_info"
             android:label="@string/fps_info_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
