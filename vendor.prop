@@ -240,6 +240,7 @@ persist.vendor.delta_time.enable=true
 # USB
 vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=rndis_bam
+ro.usb.uvc.enabled=true
 
 # Zygote
 zygote.critical_window.minute=10
