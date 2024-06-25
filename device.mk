@@ -451,6 +451,9 @@ PRODUCT_PACKAGES += \
     libpng.vendor \
     libprocessgroup.vendor
 
+# Update
+AB_OTA_UPDATER := false
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti \
