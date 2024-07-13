@@ -117,11 +117,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.sdm660
 
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    memtrack.sdm660
-
-PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
     android.frameworks.displayservice@1.0.vendor \
     android.frameworks.displayservice@1.0 \
@@ -130,7 +125,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     vendor.display.config@1.9 \
-    vendor.display.config@2.0
+    vendor.display.config@2.0 \
+    vendor.qti.hardware.memtrack-service
 
 # DRM
 PRODUCT_PACKAGES += \
