@@ -198,6 +198,9 @@ BOARD_VNDK_VERSION := current
 # Verity only needed for signing
 BOARD_AVB_ENABLE := false
 
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Wifi
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
