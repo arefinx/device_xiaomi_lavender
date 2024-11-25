@@ -28,6 +28,7 @@ def FullOTA_InstallBegin(info):
   info.script.AppendExtra('package_extract_file("install/bin/flash_super_dummy.sh", "/tmp/flash_super_dummy.sh");')
   info.script.AppendExtra('set_metadata("/tmp/flash_super_dummy.sh", "uid", 0, "gid", 0, "mode", 0755);')
   info.script.AppendExtra('run_program("/tmp/flash_super_dummy.sh");')
+  info.script.AppendExtra('assert(getprop("ro.boot.super_partition") == "system" || abort("ERROR: This recovery does not support retrofit dynamic partitions."););')
   return
 
 def OTA_InstallEnd(info):
