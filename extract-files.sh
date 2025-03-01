@@ -68,6 +68,10 @@ function blob_fixup() {
         vendor/lib/lib_lowlight.so)
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
+        vendor/lib64/libwvhidl.so) 
+            [ "$2" = "" ] && return 0 
+            grep -q "libcrypto_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
+            ;;
         vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so)
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
 	    ;;
