@@ -90,8 +90,8 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|23706dcfa35cc6f7dee934e138
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|ece3dafc4447e8302109851c3a6b0d3978b3506d
 
 # Camera - from clover
--vendor/lib/libts_face_beautify_hal.so
--vendor/lib/libts_detected_face_hal.so
+-vendor/lib/libts_face_beautify_hal.so|5b2ffbbd2b03eb4b1b98d89c04bdd3873db4bb7f
+-vendor/lib/libts_detected_face_hal.so|356a49713693fa83d058e968c00d129d85c8acfb
 
 # Charger - from jasmine
 vendor/bin/hvdcp_opti|120837d6d44abfd86515731dd26183be9cdd5596
@@ -156,18 +156,18 @@ vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so|000e0d2ac4450c0ad8baca06985bc
 vendor/lib64/vendor.qti.latency@2.0.so|60ab3143325e855f8c72e3f603c28efe2e7227b9
 
 # Common Camera - from Pie
-vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
+vendor/lib/libchromaflash.so|8da6ba08dd23993eb248e566e365884c15d03c1b
 vendor/lib/libllvd_smore.so|740de4c339772df80858ddd9390f91ead71eadeb
 vendor/lib/libmmcamera_chromaflash_lib.so|2ac15c08e7916b039b9d053a2d5c6846ed28ae41
 vendor/lib/libmmcamera_llvd.so|6fca05767e27b9a5f0050fc9296069c09e9f5dba
 vendor/lib/libmmcamera_optizoom_lib.so|0d54dcba2f86236b66384aa83861693451ee0451
 vendor/lib/libmmcamera_stillmore_lib.so|d313da5abb76da8a4328d18e13aaa3f042f63e47
 vendor/lib/libmmcamera_trueportrait_lib.so|41f491298caf7ddd2fd19b9f71906fd9f2a826ff
-vendor/lib/libmmcamera_ubifocus_lib.so|204680decba87b04a2eb5ad4746e69f8e0c413bc
-vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
+vendor/lib/libmmcamera_ubifocus_lib.so|4257544aaaefa7400b7415f4c11337e09dfbf454
+vendor/lib/liboptizoom.so|f6898fd52dc9caa7626fd959a2df9faba5dbd529
 vendor/lib/libseemore.so|cd207541c3cdd97eb25ef2a9c63662054393e81f
-vendor/lib/libtrueportrait.so|b8e11c098bd859aae6c535cdb87e3e36f6b1c6ef
-vendor/lib/libubifocus.so|833a305c780b2e7e338323c5ba27cb042f5cc3ed
+vendor/lib/libtrueportrait.so|6aad0281ab7902e93f9dac430c8bff50aeee042c
+vendor/lib/libubifocus.so|36b90ab4196e71972d716149785142b4b9623536
 
 # Camera - from lavender V10.3.6.0.PFGMIXM
 vendor/lib/hw/camera.sdm660.so|50e671432994ec9085810e5fa9c9c6619262bc19
