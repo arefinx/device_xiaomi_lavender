@@ -55,7 +55,7 @@ TARGET_TS_MAKEUP := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 MALLOC_SVELTE_FOR_LIBC32 := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-$(call project-set-path,qcom-camera,hardware/qcom-caf/sdm660/camera)
+$(call project-set-path,qcom-camera,$(DEVICE_PATH)/camera)
 
 # Display
 TARGET_SCREEN_DENSITY := 420
