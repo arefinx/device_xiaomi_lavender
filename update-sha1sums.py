@@ -20,10 +20,9 @@ import os
 import sys
 from hashlib import sha1
 
-DEVICE = 'sdm660-common'
+DEVICE = 'lavender'
 VENDOR = 'xiaomi'
-VENDOR_PATH = os.path.join(
-    *['..', '..', '..', 'vendor', VENDOR, DEVICE, 'proprietary'])
+VENDOR_PATH = os.path.join('..', '..', '..', 'vendor', VENDOR, DEVICE, 'proprietary')
 
 
 class Updater:
@@ -31,6 +30,7 @@ class Updater:
         self.filename = filename
         with open(self.filename, 'r') as f:
             self.lines = f.read().splitlines()
+        self.need_sha1 = False
 
     def write(self):
         with open(self.filename, 'w') as f:
@@ -44,11 +44,9 @@ class Updater:
 
             # Drop SHA1 hash, if existing
             self.lines[index] = line.split('|')[0]
-
         self.write()
 
     def update(self):
-        need_sha1 = False
         for index, line in enumerate(self.lines):
             # Skip empty lines
             if len(line) == 0:
@@ -56,26 +54,32 @@ class Updater:
 
             # Check if we need to set SHA1 hash for the next files
             if line[0] == '#':
-                need_sha1 = (' - from' in line)
+                self.need_sha1 = (' - from' in line)
                 continue
 
-            if need_sha1:
+            if self.need_sha1:
                 # Remove existing SHA1 hash
                 line = line.split('|')[0]
 
+                # Extract the file path
                 file_path = line.split(';')[0].split(':')[-1]
                 if file_path[0] == '-':
                     file_path = file_path[1:]
 
-                with open(os.path.join(VENDOR_PATH, file_path), 'rb') as f:
-                    hash = sha1(f.read()).hexdigest()
+                # Calculate the SHA1 hash of the file
+                hash = self.calculate_sha1(file_path)
 
-                self.lines[index] = '{}|{}'.format(line, hash)
-
+                # Update the line with SHA1 hash
+                self.lines[index] = f'{line}|{hash}'
         self.write()
 
+    def calculate_sha1(self, file_path):
+        with open(os.path.join(VENDOR_PATH, file_path), 'rb') as f:
+            return sha1(f.read()).hexdigest()
 
-for file in ['proprietary-files.txt', 'proprietary-files-fm.txt']:
+
+# Main execution logic
+for file in ['proprietary-files.txt']:
     updater = Updater(file)
     if len(sys.argv) == 2 and sys.argv[1] == '-c':
         updater.cleanup()
