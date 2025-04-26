@@ -4,6 +4,10 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+package {
+    default_visibility: ["//visibility:public"],
+}
+
 // fstab
 prebuilt_etc {
     name: "fstab.qcom",
@@ -16,5 +20,65 @@ prebuilt_etc {
     name: "init.device.rc",
     src: "etc/init.device.rc",
     sub_dir: "init/hw",
+    vendor: true,
+}
+
+// Qualcomm prebuilt scripts
+filegroup {
+    name: "qcom_prebuilt_scripts",
+    srcs: [
+        "etc/init.qcom.early_boot.sh",
+        "etc/init.qcom.post_boot.sh",
+        "etc/init.qcom.sh",
+        "etc/init.class_main.sh",
+        "etc/init.qcom.usb.sh",
+    ],
+}
+
+filegroup {
+    name: "qcom_prebuilt_rcs",
+    srcs: [
+        "etc/init.qcom.rc",
+        "etc/init.qcom.usb.rc",
+        "etc/init.msm.usb.configfs.rc",
+        "etc/init.target.rc",
+    ],
+}
+
+// Prebuilt scripts installed to vendor/bin
+prebuilt_etc {
+    name: "init.qcom.scripts",
+    srcs: ":qcom_prebuilt_scripts",
+    filename_from_src: true,
+    relative_install_path: "vendor/bin",
+    installable: true,
+    vendor: true,
+}
+
+// Prebuilt rc files installed to vendor/etc/init/hw
+prebuilt_etc {
+    name: "init.qcom.rc.files",
+    srcs: ":qcom_prebuilt_rcs",
+    filename_from_src: true,
+    relative_install_path: "vendor/etc/init/hw",
+    installable: true,
+    vendor: true,
+}
+
+// Other prebuilt files
+prebuilt_etc {
+    name: "init.recovery.qcom.rc",
+    src: "etc/init.recovery.qcom.rc",
+    filename_from_src: true,
+    relative_install_path: "root",
+    installable: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.qcom.rc",
+    src: "etc/ueventd.qcom.rc",
+    filename: "ueventd.rc",
+    relative_install_path: "vendor/etc",
+    installable: true,
     vendor: true,
 }
