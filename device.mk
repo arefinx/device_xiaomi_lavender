@@ -257,7 +257,9 @@ PRODUCT_PACKAGES += \
 # Network
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor \
-    android.system.net.netd@1.1.vendor
+    android.system.net.netd@1.1.vendor \
+    libloc_net_iface \
+    libloc_net_iface.vendor
 
 # OMX
 PRODUCT_PACKAGES += \
