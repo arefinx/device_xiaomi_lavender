@@ -392,7 +392,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcamera_sdm660_shim
+    libcamera_lavender_shim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
