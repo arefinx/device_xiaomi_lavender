@@ -60,9 +60,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
 
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
