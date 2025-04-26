@@ -68,4 +68,13 @@
         -->
         <version>1.0</version>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.data.iwlan</name>
+        <version>1.0</version>
+        <interface>
+            <name>IIWlan</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
