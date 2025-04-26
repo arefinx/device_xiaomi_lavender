@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 # Biometrics
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
+    android.hardware.biometrics.fingerprint@2.1-service.lavender
 
 # Bluetooth
 PRODUCT_PACKAGES += \
