@@ -276,6 +276,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigLavender \
+    DisableQTIAppsLavender \
     FrameworksLavender \
     SettingsProviderLavender \
     SettingsLavender \
