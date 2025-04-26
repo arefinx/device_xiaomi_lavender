@@ -272,11 +272,14 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
-
 PRODUCT_PACKAGES += \
-    LavenderWifiOverlay \
+    CarrierConfigLavender \
+    FrameworksLavender \
+    SettingsProviderLavender \
+    SettingsLavender \
+    SystemUILavender \
+    TelephonyLavender \
+    WifiLavender \
     NoCutoutOverlay \
     NotchBarKiller
 
