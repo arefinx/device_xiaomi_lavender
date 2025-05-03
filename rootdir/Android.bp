@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-// Init scripts
 sh_binary {
     name: "init.class_main.sh",
     src: "bin/init.class_main.sh",
@@ -29,7 +28,6 @@ sh_binary {
     vendor: true,
 }
 
-// Init configuration files
 prebuilt_etc {
     name: "init.fingerprint.rc",
     src: "etc/init.fingerprint.rc",
@@ -62,5 +60,46 @@ prebuilt_etc {
     name: "ueventd.qcom.rc",
     filename: "ueventd.rc",
     src: "etc/ueventd.qcom.rc",
+    vendor: true,
+}
+
+
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab.qcom_ramdisk",
+    filename: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    ramdisk: true,
+}
+
+prebuilt_etc {
+    name: "init.device.rc",
+    src: "etc/init.device.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.qcom.rc",
+    src: "etc/init.recovery.qcom.rc",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.xiaomi_parts.rc",
+    src: "etc/init.xiaomi_parts.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.xiaomi.rc",
+    src: "etc/init.xiaomi.rc",
+    sub_dir: "init/hw",
     vendor: true,
 }
