@@ -1,46 +1,27 @@
 /*
- * Copyright (C) 2016 The Android Open Source Project
- *
+ * SPDX-FileCopyrightText: 2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef ANDROID_HARDWARE_IR_V1_0_IR_H
-#define ANDROID_HARDWARE_IR_V1_0_IR_H
+#pragma once
 
-#include <android/hardware/ir/1.0/IConsumerIr.h>
-#include <hardware/consumerir.h>
-#include <hidl/MQDescriptor.h>
-#include <hidl/Status.h>
+#include <aidl/android/hardware/ir/BnConsumerIr.h>
 
+namespace aidl {
 namespace android {
 namespace hardware {
 namespace ir {
-namespace V1_0 {
-namespace implementation {
 
-using ::android::hardware::ir::V1_0::ConsumerIrFreqRange;
-using ::android::hardware::ir::V1_0::IConsumerIr;
-using ::android::hardware::hidl_array;
-using ::android::hardware::hidl_string;
-using ::android::hardware::hidl_vec;
-using ::android::hardware::Return;
-using ::android::hardware::Void;
-using ::android::sp;
-
-struct ConsumerIr : public IConsumerIr {
-    ConsumerIr();
-    ~ConsumerIr();
-    // Methods from ::android::hardware::ir::V1_0::IConsumerIr follow.
-    Return<bool> transmit(int32_t carrierFreq, const hidl_vec<int32_t>& pattern) override;
-    Return<void> getCarrierFreqs(getCarrierFreqs_cb _hidl_cb) override;
-private:
-    consumerir_device_t *mDevice;
+class ConsumerIr : public BnConsumerIr {
+  public:
+    ::ndk::ScopedAStatus getCarrierFreqs(
+            ::std::vector<::aidl::android::hardware::ir::ConsumerIrFreqRange>* _aidl_return)
+            override;
+    ::ndk::ScopedAStatus transmit(int32_t carrierFreqHz,
+                                  const ::std::vector<int32_t>& pattern) override;
 };
 
-}  // namespace implementation
-}  // namespace V1_0
 }  // namespace ir
 }  // namespace hardware
 }  // namespace android
-
-#endif  // ANDROID_HARDWARE_IR_V1_0_IR_H
+}  // namespace aidl

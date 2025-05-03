@@ -1,32 +1,24 @@
 /*
- * Copyright 2016 The Android Open Source Project
- *
+ * SPDX-FileCopyrightText: 2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "android.hardware.ir@1.0-service.lavender"
-
-#include <android-base/logging.h>
-#include <hidl/HidlTransportSupport.h>
 #include "ConsumerIr.h"
 
-using android::hardware::ir::V1_0::IConsumerIr;
-using android::hardware::ir::V1_0::implementation::ConsumerIr;
-using android::hardware::configureRpcThreadpool;
-using android::hardware::joinRpcThreadpool;
+#include <android-base/logging.h>
+#include <android/binder_manager.h>
+#include <android/binder_process.h>
+
+using aidl::android::hardware::ir::ConsumerIr;
 
 int main() {
-    android::sp<IConsumerIr> service = new ConsumerIr();
+    ABinderProcess_setThreadPoolMaxThreadCount(0);
+    std::shared_ptr<ConsumerIr> hal = ::ndk::SharedRefBase::make<ConsumerIr>();
 
-    configureRpcThreadpool(1, true /*callerWillJoin*/);
+    const std::string instance = std::string(ConsumerIr::descriptor) + "/default";
+    binder_status_t status = AServiceManager_addService(hal->asBinder().get(), instance.c_str());
+    CHECK_EQ(status, STATUS_OK);
 
-    android::status_t status = service->registerAsService();
-    if (status != android::OK) {
-        LOG(ERROR) << "Cannot register ConsumerIr service";
-        return 1;
-    }
-
-    joinRpcThreadpool();
-
-    return 1; // should never get here
+    ABinderProcess_joinThreadPool();
+    return EXIT_FAILURE;  // should not reach
 }

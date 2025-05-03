@@ -32,7 +32,7 @@
 /dev/spidev7.1                                  u:object_r:spidev_device:s0
 
 # IR HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.lavender                        u:object_r:hal_ir_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir-service\.xiaomi                        u:object_r:hal_ir_default_exec:s0
 
 # Kcal
 /sys/devices/platform/kcal_ctrl.0(/.*)?         u:object_r:kcal_dev:s0
