@@ -84,13 +84,13 @@ LOC_HIDL_VERSION := 3.0
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
    $(DEVICE_PATH)/configs/hidl/framework_compatibility_matrix.xml  \
-   hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-   hardware/qcom-caf/common/vendor_framework_compatibility_matrix_legacy.xml \
-   hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
-   vendor/lineage/config/device_framework_matrix.xml
+   $(DEVICE_PATH)/configs/hidl/qcom-caf/vendor_framework_compatibility_matrix.xml \
+   $(DEVICE_PATH)/configs/hidl/qcom-caf/vendor_framework_compatibility_matrix_legacy.xml \
+   $(DEVICE_PATH)/configs/hidl/xiaomi/xiaomi_framework_compatibility_matrix.xml \
+   $(DEVICE_PATH)/configs/hidl/device_framework_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/qcom-caf/compatibility_matrix.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
