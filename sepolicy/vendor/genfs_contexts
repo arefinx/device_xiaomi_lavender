@@ -24,9 +24,12 @@ genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/name  
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/name       u:object_r:sysfs_graphics:s0
 
 # LED
-genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/button-backlight      u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/button-backlight1     u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/white                 u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/button-backlight      u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/button-backlight1     u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/white                 u:object_r:sysfs_leds:s0
+
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/led:switch_0/brightness  u:object_r:sysfs_torch:s0
+genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/led:torch_0/brightness  u:object_r:sysfs_torch:s0
 
 # Power
 genfscon proc  /sys/kernel/sched_boost                           u:object_r:proc_sched:s0
