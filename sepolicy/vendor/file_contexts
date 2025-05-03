@@ -45,7 +45,7 @@
 /persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
 
 # Thermal
-/data/vendor/thermal(/.*)?                      u:object_r:thermal_data_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.qti\.lavender                     u:object_r:thermal_data_file:s0
 
 # Torch Control
 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/led:switch_0/brightness                                u:obejct_r:sysfs_tourch:s0

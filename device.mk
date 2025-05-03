@@ -425,6 +425,10 @@ PRODUCT_PACKAGES += \
     libpng.vendor \
     libprocessgroup.vendor
 
+# Thermals
+PRODUCT_PACKAGE += \
+    android.hardware.thermal@2.0-service.qti.lavender
+
 # Update
 AB_OTA_UPDATER := false
 
