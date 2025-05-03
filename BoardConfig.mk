@@ -56,7 +56,7 @@ MALLOC_SVELTE_FOR_LIBC32 := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_CAMERA_SERVICE_EXT_LIB :=
 //$(DEVICE_PATH):libcameraservice_extension.lavender
-$(call project-set-path,qcom-camera,$(DEVICE_PATH)/camera)
+$(call project-set-path,qcom-camera,$(DEVICE_PATH)/configs/camera)
 
 # Display
 TARGET_SCREEN_DENSITY := 420
@@ -120,7 +120,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_CONFIG := lavender_defconfig
+TARGET_KERNEL_CONFIG := void_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
 TARGET_KERNEL_VERSION := 4.19
 override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
@@ -173,10 +173,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
