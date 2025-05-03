@@ -37,5 +37,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <integer name="config_cpuTempDivider" translatable="false">1000</integer>
 
     <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
-    <bool name="config_show4GForLTE">true</bool>    
+    <bool name="config_show4GForLTE">true</bool>
+
+    <!-- Whether to play turbulence noise after clicking the play button -->
+    <bool name="config_turbulenceNoise">false</bool>
 </resources>
