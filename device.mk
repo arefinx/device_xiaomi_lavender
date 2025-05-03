@@ -279,15 +279,17 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
-    SettingsOverlay \
-    NoCutoutOverlay \
-    NotchBarKiller \
-    DeviceAsWebcamLavender
+    ApertureLavender\
+    CarrierConfigLavender\
+    DeviceAsWebcamLavender\
+    FrameworksLavender\
+    NotchBarKiller\
+    SettingsLavender\
+    SettingsProviderLavender\
+    SystemUILavender\
+    TelephonyLavender\
+    WifiLavender
 
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
